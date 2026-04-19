@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap");
+
+:root {
+  --bg: #050505;
+  --bg-soft: #090909;
+  --panel: #0f1115;
+  --panel-2: #151922;
+  --text: #ffffff;
+  --text-soft: #d8e6f7;
+  --muted: #9aa7b8;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #8fd3ff;
+  --accent-strong: #77c6f7;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+body[data-theme="light"] {
+  --bg: #f3f6fb;
+  --bg-soft: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #eef3f8;
+  --text: #121826;
+  --text-soft: #334155;
+  --muted: #64748b;
+  --line: rgba(15, 23, 42, 0.1);
+  --accent: #7ccfff;
+  --accent-strong: #5abcf7;
+  --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}

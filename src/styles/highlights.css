@@ -1,0 +1,126 @@
+.highlights-nav {
+  margin-top: 2px;
+  margin-bottom: 28px;
+}
+
+.section-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0)
+  );
+  margin-bottom: 22px;
+}
+
+.highlights-list-wrap {
+  position: relative;
+  padding-top: 26px;
+}
+
+.highlight-plane {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(8px) rotate(-16deg);
+  transition:
+    left 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease,
+    transform 0.45s ease;
+  pointer-events: none;
+  z-index: 3;
+  text-shadow: 0 0 16px rgba(130, 212, 255, 0.35);
+}
+
+.highlight-plane.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(-12deg);
+}
+
+.highlights-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.highlight-item {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-2px);
+}
+
+.highlight-circle {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #efefef, #cacaca);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7bbff0;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.22),
+    inset 0 1px 1px rgba(255, 255, 255, 0.55);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.highlight-item:hover .highlight-circle {
+  transform: scale(1.05);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.26),
+    0 0 0 4px rgba(130, 212, 255, 0.08);
+}
+
+.highlight-item.active .highlight-circle {
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.26),
+    0 0 0 5px rgba(130, 212, 255, 0.12);
+  color: var(--accent);
+}
+
+.highlight-label-text {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  text-align: center;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .highlights-list {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .highlight-circle {
+    width: 72px;
+    height: 72px;
+  }
+
+  .highlight-label-text {
+    font-size: 0.82rem;
+  }
+}
